@@ -6,11 +6,11 @@
 /*   By: mzarhou <mzarhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 10:23:49 by mzarhou           #+#    #+#             */
-/*   Updated: 2021/11/05 18:18:06 by mzarhou          ###   ########.fr       */
+/*   Updated: 2021/11/06 14:19:57 by mzarhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 void	ft_lstadd_back(t_list **lst_ptr, t_list *new)
 {

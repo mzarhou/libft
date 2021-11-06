@@ -6,11 +6,11 @@
 /*   By: mzarhou <mzarhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 10:52:29 by mzarhou           #+#    #+#             */
-/*   Updated: 2021/11/06 13:13:07 by mzarhou          ###   ########.fr       */
+/*   Updated: 2021/11/06 14:20:36 by mzarhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 #include <stdlib.h>
 
 static void	ft_remove_el(
