@@ -1,21 +1,16 @@
 ODIR = obj
-INCLUDE_DIR = includes
-SRCS = ${wildcard part1/*.c} ${wildcard part2/*.c}
-SRCS_BONUS = ${SRCS} ${wildcard _bonus/*.c}
+SRCS = ${shell find . -not -name "*_bonus.c" -name "*.c" -maxdepth 1}
+SRCS_BONUS = ${shell find . -name "*.c" -maxdepth 1}
 OBJS = ${patsubst %.c, ${ODIR}/%.o, ${SRCS}}
 OBJS_BONUS = ${patsubst %.c, ${ODIR}/%.o, ${SRCS_BONUS}}
 
 CC = gcc
-CC_FLAGS = -Wall -Werror -Wextra -I${INCLUDE_DIR}
+CC_FLAGS = -Wall -Werror -Wextra
 RM = rm -rf
 
 NAME = libft.a
 
 ${ODIR}/%.o: %.c
-	@mkdir -p ${@D}
-	CC ${CC_FLAGS} -c $< -o $@
-
-${ODIR}/%.o: _bonus/%.c
 	@mkdir -p ${@D}
 	CC ${CC_FLAGS} -c $< -o $@
 
@@ -37,4 +32,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean fclean re 
+.PHONY: clean fclean re
