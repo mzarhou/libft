@@ -6,7 +6,7 @@
 /*   By: mzarhou <mzarhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 15:36:11 by mzarhou           #+#    #+#             */
-/*   Updated: 2021/11/06 12:37:07 by mzarhou          ###   ########.fr       */
+/*   Updated: 2021/11/06 14:33:31 by mzarhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	const char	*start;
 	const char	*end;
 
+	if (!s1)
+		return (0);
 	start = ft_get_start(s1, set);
 	end = ft_get_end(s1, set);
 	if (start > end)

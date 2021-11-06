@@ -6,7 +6,7 @@
 /*   By: mzarhou <mzarhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 14:43:52 by mzarhou           #+#    #+#             */
-/*   Updated: 2021/11/05 21:53:41 by mzarhou          ###   ########.fr       */
+/*   Updated: 2021/11/06 14:36:10 by mzarhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	i;
 	unsigned int	str_len;
 
+	if (!s)
+		return (0);
 	str = (char *)s;
 	str_len = ft_strlen(str);
 	if (len < ft_strlen(str))

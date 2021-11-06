@@ -6,7 +6,7 @@
 /*   By: mzarhou <mzarhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 19:11:51 by mzarhou           #+#    #+#             */
-/*   Updated: 2021/11/03 19:18:44 by mzarhou          ###   ########.fr       */
+/*   Updated: 2021/11/06 14:32:31 by mzarhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*res;
 
 	i = 0;
+	if (!s)
+		return (0);
 	res = (char *)malloc(ft_strlen(s) + 1);
 	if (!res)
 		return (0);
