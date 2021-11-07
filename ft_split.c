@@ -6,13 +6,26 @@
 /*   By: mzarhou <mzarhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 17:02:53 by mzarhou           #+#    #+#             */
-/*   Updated: 2021/11/03 17:43:57 by mzarhou          ###   ########.fr       */
+/*   Updated: 2021/11/07 12:34:01 by mzarhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
 #include "libft.h"
+
+static int	ft_word_length(const char *str, int i, char sep)
+{
+	int	word_length;
+
+	word_length = 0;
+	while (str && str[i] && str[i] != sep)
+	{
+		word_length++;
+		i++;
+	}
+	return (word_length);
+}
 
 static int	ft_get_words_nb(const char *str, char sep)
 {
@@ -54,7 +67,7 @@ char	**ft_split(char const *str, char sep)
 		k = 0;
 		while (str[i] == sep)
 			i++;
-		words[j] = (char *)malloc(ft_strlen(str) + 1);
+		words[j] = (char *)malloc(ft_word_length(str, i, sep) + 1);
 		while (str[i] != sep && str[i])
 			words[j][k++] = str[i++];
 		words[j][k] = '\0';

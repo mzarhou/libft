@@ -6,7 +6,7 @@
 /*   By: mzarhou <mzarhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 14:43:52 by mzarhou           #+#    #+#             */
-/*   Updated: 2021/11/06 14:36:10 by mzarhou          ###   ########.fr       */
+/*   Updated: 2021/11/07 12:43:39 by mzarhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,33 +18,36 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*str;
 	char			*sub_str;
 	unsigned int	i;
-	unsigned int	str_len;
+	unsigned int	substr_len;
 
 	if (!s)
 		return (0);
 	str = (char *)s;
-	str_len = ft_strlen(str);
+	substr_len = ft_strlen(str);
 	if (len < ft_strlen(str))
-		str_len = len;
-	else
-		str_len = ft_strlen(str);
-	sub_str = (char *)malloc(str_len + 1);
+		substr_len = len;
+	if (start > ft_strlen(str))
+		return (ft_strdup(""));
+	sub_str = (char *)malloc(substr_len + 1);
 	if (!sub_str)
 		return (0);
-	if (start > str_len)
-		return ((char *)ft_calloc(1, 1));
 	str += start;
 	i = 0;
-	while (str && *str && str_len--)
+	while (str && *str && substr_len--)
 		sub_str[i++] = *str++;
 	sub_str[i] = '\0';
 	return (sub_str);
 }
 
 // #include <stdio.h>
+// #include <string.h>
 // int main()
 // {
-// 	char *s = ft_substr("tripouille", 23423, 1);
-// 	printf("%s, %p", s, s);
-// 	free(s);
+	// char *s = ft_substr("tripouille", 0, 2);
+	// printf("%s\n", s);
+	// if (!strcmp(s, ""))
+	// 	printf("success");
+	// else
+	// 	printf("fail");
+	// free(s);
 // }
