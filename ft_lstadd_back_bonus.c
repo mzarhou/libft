@@ -6,7 +6,7 @@
 /*   By: mzarhou <mzarhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 10:23:49 by mzarhou           #+#    #+#             */
-/*   Updated: 2021/11/06 14:19:57 by mzarhou          ###   ########.fr       */
+/*   Updated: 2021/11/08 13:09:13 by mzarhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_lstadd_back(t_list **lst_ptr, t_list *new)
 	else
 	{
 		lst = *lst_ptr;
-		while (lst->next)
+		while (lst->next != 0)
 			lst = lst->next;
 		lst->next = new;
 	}
