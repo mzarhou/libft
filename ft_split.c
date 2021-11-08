@@ -6,7 +6,7 @@
 /*   By: mzarhou <mzarhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 17:02:53 by mzarhou           #+#    #+#             */
-/*   Updated: 2021/11/08 11:52:31 by mzarhou          ###   ########.fr       */
+/*   Updated: 2021/11/08 21:26:26 by mzarhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static void	*free_memory(char **words, int end_index)
 	return (0);
 }
 
-void	ft_skip(const char *str, int *i, char sep)
+static void	ft_skip(const char *str, int *i, char sep)
 {
 	if (!str || !i)
 		return ;

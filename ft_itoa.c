@@ -6,7 +6,7 @@
 /*   By: mzarhou <mzarhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 17:47:36 by mzarhou           #+#    #+#             */
-/*   Updated: 2021/11/07 15:57:01 by mzarhou          ###   ########.fr       */
+/*   Updated: 2021/11/08 21:25:15 by mzarhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <limits.h>
 
-int	ft_getnbr_length(int nbr)
+static int	ft_getnbr_length(int nbr)
 {
 	int	count;
 

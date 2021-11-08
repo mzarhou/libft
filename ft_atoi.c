@@ -6,13 +6,13 @@
 /*   By: mzarhou <mzarhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:21:16 by mzarhou           #+#    #+#             */
-/*   Updated: 2021/11/08 18:09:52 by mzarhou          ###   ########.fr       */
+/*   Updated: 2021/11/08 21:25:00 by mzarhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(char c)
+static int	ft_isspace(char c)
 {
 	if (
 		c == ' '
