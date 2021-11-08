@@ -1,5 +1,4 @@
 ODIR = obj
-INCLUDES = libft.h
 SRCS = ft_isascii.c ft_isprint.c ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 		ft_tolower.c ft_toupper.c ft_strlen.c ft_strlcpy.c ft_strlcat.c \
 		ft_strchr.c ft_strrchr.c ft_strnstr.c ft_strncmp.c ft_atoi.c \
@@ -19,17 +18,17 @@ RM = rm -rf
 
 NAME = libft.a
 
-${ODIR}/%.o: %.c
+${ODIR}/%.o: %.c libft.h
 	@mkdir -p ${@D}
 	CC ${CC_FLAGS} -c $< -o $@
 
 all: ${NAME}
 
-$(NAME): ${OBJS} ${INCLUDES}
+$(NAME): ${OBJS}
 	ar rc ${NAME} ${OBJS}
 	ranlib ${NAME}
 
-bonus: ${OBJS_BONUS} ${INCLUDES}
+bonus: ${OBJS_BONUS}
 	ar rc ${NAME} ${OBJS_BONUS}
 	ranlib ${NAME}
 
