@@ -6,7 +6,7 @@
 /*   By: mzarhou <mzarhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 17:02:53 by mzarhou           #+#    #+#             */
-/*   Updated: 2021/11/07 12:34:01 by mzarhou          ###   ########.fr       */
+/*   Updated: 2021/11/08 11:52:31 by mzarhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,27 @@ static int	ft_get_words_nb(const char *str, char sep)
 	return (count);
 }
 
+static void	*free_memory(char **words, int end_index)
+{
+	int	i;
+
+	i = 0;
+	if (!words)
+		return (0);
+	while (i < end_index && words[i])
+		free(words[i]);
+	free(words);
+	return (0);
+}
+
+void	ft_skip(const char *str, int *i, char sep)
+{
+	if (!str || !i)
+		return ;
+	while (str[*i] == sep)
+		(*i)++;
+}
+
 char	**ft_split(char const *str, char sep)
 {
 	char	**words;
@@ -65,13 +86,13 @@ char	**ft_split(char const *str, char sep)
 	while (str[i] && j < ft_get_words_nb(str, sep))
 	{
 		k = 0;
-		while (str[i] == sep)
-			i++;
+		ft_skip(str, &i, sep);
 		words[j] = (char *)malloc(ft_word_length(str, i, sep) + 1);
+		if (!words[j])
+			return (free_memory(words, j));
 		while (str[i] != sep && str[i])
 			words[j][k++] = str[i++];
-		words[j][k] = '\0';
-		j++;
+		words[j++][k] = '\0';
 	}
 	words[j] = 0;
 	return (words);
