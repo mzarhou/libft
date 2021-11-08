@@ -6,7 +6,7 @@
 /*   By: mzarhou <mzarhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 10:40:00 by mzarhou           #+#    #+#             */
-/*   Updated: 2021/11/08 11:19:51 by mzarhou          ###   ########.fr       */
+/*   Updated: 2021/11/08 18:12:10 by mzarhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ void	ft_lstclear(t_list **lst_ptr, void (*del)(void*))
 	while (list)
 	{
 		next_el = list->next;
-		if (del)
-			(*del)(list->content);
-		free(list);
+		ft_lstdelone(list, del);
 		list = next_el;
 	}
 	*lst_ptr = 0;

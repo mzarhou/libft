@@ -6,7 +6,7 @@
 /*   By: mzarhou <mzarhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:21:16 by mzarhou           #+#    #+#             */
-/*   Updated: 2021/11/05 21:42:23 by mzarhou          ###   ########.fr       */
+/*   Updated: 2021/11/08 18:09:52 by mzarhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	ft_isspace(char c)
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
-	int	res;
+	int			i;
+	int			sign;
+	long long	res;
 
 	res = 0;
 	sign = 1;
@@ -48,12 +48,13 @@ int	ft_atoi(const char *str)
 		res = res * 10 + str[i] - '0';
 		i++;
 	}
-	return (res * sign);
+	return ((int)(res * sign));
 }
 
 // #include <stdio.h>
+// #include <limits.h>
 // int main()
 // {
-// 	int i = ft_atoi("945");
+// 	int i = ft_atoi("-2147483648");
 // 	printf("%d\n", i);
 // }
