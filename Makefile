@@ -12,7 +12,7 @@ SRCS_BONUS = ${SRCS} ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_front_bonus
 OBJS = ${patsubst %.c, ${ODIR}/%.o, ${SRCS}}
 OBJS_BONUS = ${patsubst %.c, ${ODIR}/%.o, ${SRCS_BONUS}}
 
-CC = gcc
+CC = cc
 CC_FLAGS = -Wall -Werror -Wextra
 RM = rm -rf
 
